@@ -1,0 +1,50 @@
+# ------------------------------
+# 🏗️ STAGE 1 - BUILDER
+# ------------------------------
+FROM node:20-alpine AS builder
+
+# 1️⃣ Directorio de trabajo
+WORKDIR /app
+
+# 2️⃣ Copiamos package y lock file
+COPY package.json pnpm-lock.yaml ./
+
+# 3️⃣ Instalamos pnpm
+RUN npm install -g pnpm
+
+# 4️⃣ Instalamos dependencias de producción y build
+RUN pnpm install --frozen-lockfile
+# → Reproduce dependencias exactas desde el lock file
+
+# 5️⃣ Copiamos el resto del código fuente
+COPY . .
+
+# 6️⃣ Ejecutamos el build
+RUN pnpm build
+# → Genera la carpeta `.next` lista para producción
+
+# ------------------------------
+# 🧩 STAGE 2 - RUNNER (imagen final)
+# ------------------------------
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+# 7️⃣ Configuramos entorno
+ENV NODE_ENV=production
+
+# 8️⃣ Instalamos pnpm en el runner
+RUN npm install -g pnpm
+
+# 9️⃣ Copiamos solo lo necesario desde el builder
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /app/node_modules ./node_modules
+
+# 🔟 Exponemos el puerto
+EXPOSE 3000
+
+# 1️⃣1️⃣ Comando de ejecución
+CMD ["pnpm", "start"]
+# → Ejecuta "next start" (debe estar definido en package.json)

@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  frontend:
+    container_name: veterinaria-frontend-prod
+    build:
+      context: .
+      dockerfile: dockerfile.prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    command: pnpm start

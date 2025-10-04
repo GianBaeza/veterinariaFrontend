@@ -1,0 +1,32 @@
+# ------------------------------
+# 🔧 STAGE 1 - ENTORNO DE DESARROLLO
+# ------------------------------
+FROM node:20-alpine
+
+# 1️⃣ Define el directorio de trabajo
+WORKDIR /app
+# → Todo lo que copies o ejecutes se hace desde /app
+
+# 2️⃣ Copiamos los archivos de dependencias
+COPY package.json pnpm-lock.yaml ./
+# → Solo copiamos esto primero para aprovechar la cache de Docker
+
+# 3️⃣ Instalamos pnpm globalmente
+RUN npm install -g pnpm
+# → Así tenemos el CLI de pnpm dentro del contenedor
+
+# 4️⃣ Instalamos dependencias usando pnpm
+RUN pnpm install
+# → Instala exactamente según pnpm-lock.yaml (reproducible)
+
+# 5️⃣ Copiamos todo el código fuente
+COPY . .
+# → Copia tu proyecto entero (pages, components, etc.)
+
+# 6️⃣ Exponemos el puerto 3000
+EXPOSE 3000
+# → Puerto por defecto del dev server de Next.js
+
+# 7️⃣ Comando por defecto (modo desarrollo)
+CMD ["pnpm", "dev"]
+# → Levanta Next.js con hot reload

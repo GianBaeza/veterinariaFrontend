@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  frontend:
+    container_name: veterinaria-frontend-dev
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app # 🔁 Monta tu código local
+      - /app/node_modules # 🚫 Evita sobrescribir node_modules del contenedor
+      - /app/.next # 🚫 Evita sobrescribir build temporal
+    environment:
+      - NODE_ENV=development
+    command: pnpm dev # ▶️ Ejecuta modo desarrollo
