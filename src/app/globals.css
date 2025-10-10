@@ -1,26 +1,20 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+.BackgroundCardLogin {
+    box-shadow: -2px 10px 24px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -2px 10px 24px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 10px 24px -6px rgba(0, 0, 0, 0.75);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B597F6", endColorstr="#96C6EA", GradientType=1 );
 }
-
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+.backgroundLogin {
+    background: linear-gradient(45deg, #640986 0%, #e6e0f0 100%);
 }
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
-
-body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+.card {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 2px 20px 0px rgba(71, 49, 197, 0.75);
+    -moz-box-shadow: 0px 2px 20px 0px rgba(114, 90, 216, 0.75);
 }
