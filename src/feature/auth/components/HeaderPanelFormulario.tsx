@@ -11,8 +11,12 @@ export default function HeaderPanelFormulario({
 }: HeaderPanelFormularioProps) {
     return (
         <div className="text-center  space-y-3 w-full">
-            <h2 className="text-3xl text-white font-heading">{titulo}</h2>
-            <p className="text-base text-white/80 font-sans">{descripcion}</p>
+            <h2 className=" text-xl lg:text-3xl text-white font-heading">
+                {titulo}
+            </h2>
+            <p className="text-md lg:text-base text-white/80 font-sans">
+                {descripcion}
+            </p>
         </div>
     )
 }

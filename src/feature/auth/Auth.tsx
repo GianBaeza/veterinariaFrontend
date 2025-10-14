@@ -1,5 +1,4 @@
 import React from 'react'
-
 import PanelDeFormularios from './components/PanelDeFormularios'
 
 export default function Auth() {

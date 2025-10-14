@@ -28,7 +28,7 @@ export default function PanelDeFormularios() {
     return (
         <Tabs
             defaultValue="iniciarSession"
-            className="w-auto h-fit rounded-lg p-5 BackgroundCardLogin bg-black/80 backdrop-blur-3xl flex flex-col justify-start items-center space-y-sm"
+            className=" w-11/12  lg:w-6/12 h-fit rounded-lg p-2 lg:p-5 BackgroundCardLogin bg-black/80 backdrop-blur-3xl flex flex-col justify-start items-center space-y-sm"
         >
             <span className="w-full flex justify-start ">
                 <TabsList className="bg-primary/80 backdrop-blur-sm rounded-sm p-xs flex gap-xs">
@@ -44,7 +44,10 @@ export default function PanelDeFormularios() {
                 </TabsList>
             </span>
 
-            <TabsContent value="iniciarSession" className="space-y-sm w-full">
+            <TabsContent
+                value="iniciarSession"
+                className="space-y-sm w-full  overflow-hidden"
+            >
                 <HeaderPanelFormulario
                     titulo="Iniciar Sesión"
                     descripcion={
