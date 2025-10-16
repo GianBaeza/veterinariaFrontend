@@ -40,7 +40,7 @@ export function Navbar() {
             {/* Menú Desktop */}
             {!isMobile && (
                 <NavigationMenu className="w-full text-white">
-                    <NavigationMenuList className="flex gap-6 mx-auto">
+                    <NavigationMenuList className="flex gap-6 justify-center">
                         {menuItems.map((nav, i) => (
                             <NavigationMenuItem key={i}>
                                 <NavigationMenuTrigger
@@ -50,7 +50,7 @@ export function Navbar() {
                                     {nav.label}
                                 </NavigationMenuTrigger>
                                 {nav.submenu && (
-                                    <NavigationMenuContent className="bg-black/80 p-4 rounded-lg z-10">
+                                    <NavigationMenuContent className="bg-black/80 p-4 rounded-lg z-10 ">
                                         <ul className="grid gap-3 w-[200px]">
                                             {nav.submenu.map((subItem, j) => (
                                                 <li key={j}>
