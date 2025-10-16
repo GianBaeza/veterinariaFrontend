@@ -28,7 +28,7 @@ export default function PanelDeFormularios() {
     return (
         <Tabs
             defaultValue="iniciarSession"
-            className="w-auto h-fit rounded-lg p-5 BackgroundCardLogin bg-black/80 backdrop-blur-3xl flex flex-col justify-start items-center space-y-sm"
+            className="w-full max-w-2xl h-fit rounded-lg p-4 md:p-5 BackgroundCardLogin bg-black/80 backdrop-blur-3xl flex flex-col justify-start items-center space-y-sm"
         >
             <span className="w-full flex justify-start ">
                 <TabsList className="bg-primary/80 backdrop-blur-sm rounded-sm p-xs flex gap-xs">

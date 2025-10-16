@@ -9,7 +9,7 @@ const style_Auth = {
     label: 'text-white font-medium text-small font-sans',
     input: 'px-4 py-2 border border-white/20 bg-white/10 backdrop-blur-sm rounded-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all text-white placeholder-white/50',
     error: 'text-error text-small font-sans',
-    button: 'w-[400px] cursor-pointer bg-blue-500 text-white font-medium py-2 px-4 rounded transition-all duration-300 shadow hover:bg-blue-600 hover:scale-105 active:scale-100 disabled:opacity-50 disabled:cursor-not-allowed',
+    button: 'w-full cursor-pointer bg-blue-500 text-white font-medium py-2 px-4 rounded transition-all duration-300 shadow hover:bg-blue-600 hover:scale-105 active:scale-100 disabled:opacity-50 disabled:cursor-not-allowed',
 }
 
 const initialState = {
@@ -48,20 +48,18 @@ export default function Formulario({
 
             <form
                 action={formAction}
-                className={`flex flex-col justify-center items-center ${
-                    cardActual ? 'gap-10' : 'gap-10'
-                } mt-6 $[${cardActual ? 'w-10/12' : 'w-9/12'}]`}
+                className={`flex flex-col justify-center items-center gap-10 mt-6 w-full`}
             >
                 <div
-                    className={`grid gap-5 w-full ${
-                        cardActual ? 'grid-col-2' : 'grid-col-1'
-                    } lg:${
-                        gridCols
-                            ? gridColsClasses[
-                                  gridCols as keyof typeof gridColsClasses
-                              ]
-                            : 'grid-cols-1'
-                    } `}
+                    className={`grid gap-5 w-full grid-cols-1 ${
+                        gridCols === 2
+                            ? 'md:grid-cols-2'
+                            : gridCols === 3
+                              ? 'md:grid-cols-3'
+                              : gridCols === 4
+                                ? 'md:grid-cols-2 lg:grid-cols-4'
+                                : ''
+                    }`}
                 >
                     {formulario.map((item, i) => (
                         <div
