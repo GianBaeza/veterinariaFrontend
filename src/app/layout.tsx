@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Questrial } from 'next/font/google'
 import './globals.css'
+import { Navbar } from '@/shared/components/nav/Navbar'
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -29,6 +30,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${questrial.variable} `}
                 cz-shortcut-listen="true"
             >
+                <Navbar />
                 {children}
             </body>
         </html>
