@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require('@material-tailwind/react/utils/withMT')
+
+module.exports = withMT({
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
@@ -24,8 +25,7 @@ module.exports = {
 
             // ✍️ TIPOGRAFÍAS
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                heading: ['Poppins', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             },
 
             // 🔠 TAMAÑOS DE TEXTO (Design tokens)
@@ -52,4 +52,4 @@ module.exports = {
         },
     },
     plugins: [],
-}
+})

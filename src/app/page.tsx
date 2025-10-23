@@ -1,10 +1,9 @@
-import Auth from '@/feature/auth/Auth'
-import { Fragment } from 'react'
+import Home from '@/feature/home/Home'
 
-export default function Home() {
+export default function page() {
     return (
-        <main className="flex min-h-screen w-full  items-start justify-center ">
-            <Auth />
-        </main>
+        <>
+            <Home />
+        </>
     )
 }

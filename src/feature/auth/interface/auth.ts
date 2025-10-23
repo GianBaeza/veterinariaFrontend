@@ -13,7 +13,7 @@ export interface FormProps {
         formData: FormData,
     ) => Promise<{
         success: boolean
-        errors: Record<string, string> | null
+        errors?: Record<string, string> | null
     }>
     gridCols?: number | string
     tipoForm?: 'crear' | 'iniciarSession'

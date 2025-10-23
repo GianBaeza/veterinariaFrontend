@@ -13,7 +13,6 @@ const style_Auth = {
 }
 
 const initialState = {
-    success: false,
     errors: null,
 }
 
@@ -117,14 +116,6 @@ export default function Formulario({
                     )}
                 </button>
             </form>
-
-            {state?.success && (
-                <div className="bg-success/10 border border-success/30 text-success px-md py-sm rounded-sm backdrop-blur-sm">
-                    <span className="text-small font-sans">
-                        ¡Operación exitosa!
-                    </span>
-                </div>
-            )}
         </div>
     )
 }

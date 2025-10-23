@@ -22,7 +22,7 @@ export function Navbar() {
     const [openIndex, setOpenIndex] = React.useState<number | null>(null)
 
     return (
-        <nav className="w-full relative bg-black/80 shadow-md h-[80px] flex items-center px-4">
+        <nav className="w-full relative bg-trasparent h-[80px] flex items-center px-4">
             {isMobile && (
                 <span
                     className={`absolute left-0 cursor-pointer ${
@@ -45,23 +45,23 @@ export function Navbar() {
                             <NavigationMenuItem key={i}>
                                 <NavigationMenuTrigger
                                     icon={!!nav.submenu}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer text-gray-800 hover:text-gray-700 scale-100 transition-all ease-in-out hover:scale-110 "
                                 >
                                     {nav.label}
                                 </NavigationMenuTrigger>
                                 {nav.submenu && (
-                                    <NavigationMenuContent className="bg-black/80 p-4 rounded-lg z-10">
-                                        <ul className="grid gap-3 w-[200px]">
+                                    <NavigationMenuContent className=" p-4 rounded-lg z-10 submenu-navbar text-start">
+                                        <ul className="flex flex-col item-start justify-items-start gap-3 w-[200px] text-start">
                                             {nav.submenu.map((subItem, j) => (
                                                 <li key={j}>
-                                                    <NavigationMenuLink asChild>
+                                                    <NavigationMenuLink
+                                                        asChild
+                                                        className=""
+                                                    >
                                                         <Link
                                                             href={subItem.href}
-                                                            className="flex items-center gap-2 hover:text-gray-300 transition-colors"
+                                                            className=" gap-2 text-gray-800 hover:text-gray-700 scale-100 ease-in-out hover:scale-105"
                                                         >
-                                                            <CircleHelpIcon
-                                                                size={16}
-                                                            />
                                                             {subItem.label}
                                                         </Link>
                                                     </NavigationMenuLink>
@@ -93,7 +93,10 @@ export function Navbar() {
                             />
                         </span>
                     )}
-                    <NavigationMenu className="w-full h-screen text-white flex items-start justify-start md:flex-row" viewport={false}>
+                    <NavigationMenu
+                        className="w-full h-screen text-white flex items-start justify-start md:flex-row"
+                        viewport={false}
+                    >
                         <NavigationMenuList className=" w-full flex  flex-col items-start justify-start  md:flex-row gap-6 ">
                             {menuItems.map((nav, i) => (
                                 <NavigationMenuItem key={i}>
