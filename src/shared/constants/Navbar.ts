@@ -12,6 +12,11 @@ export const ROUTERS_PATH = {
     HORARIO_VETERINARIA: '/configuracion/horario-veterinaria',
     JORNADAS: '/configuracion/jornadas',
     MI_HORARIO: '/configuracion/mi-horario',
+    //--------------Sin Sesión----------------//
+    INICIAR_SESION: '/iniciar-sesion',
+    CREAR_CUENTA: '/crear-cuenta',
+    MAS_INFORMACION: '/mas-informacion',
+    CONTACTO: '/contacto',
 }
 
 export const menuItems = [
@@ -36,4 +41,12 @@ export const menuItems = [
             { label: 'Mi Horario', href: ROUTERS_PATH.MI_HORARIO },
         ],
     },
+]
+
+export const menuSinSesion = [
+    { label: 'Inicio', href: ROUTERS_PATH.INICIO },
+    { label: 'Más Información', href: ROUTERS_PATH.MAS_INFORMACION },
+    { label: 'Contacto', href: ROUTERS_PATH.CONTACTO },
+    { label: 'Iniciar Sesión', href: ROUTERS_PATH.INICIAR_SESION },
+    { label: 'Crear Cuenta', href: ROUTERS_PATH.CREAR_CUENTA },
 ]

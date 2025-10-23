@@ -1,17 +1,15 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Questrial } from 'next/font/google'
+import { Geist, Geist_Mono, Questrial, Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/shared/components/nav/Navbar'
+import { Button } from '@/lib/button'
+import ButtonWhatsap from '@/shared/ui/ButtonWhatsap'
 
-const geistSans = Geist({
-    variable: '--font-geist-sans',
+const inter_font = Inter({
     subsets: ['latin'],
-})
-
-const questrial = Questrial({
-    variable: '--font-questrial',
-    subsets: ['latin'],
-    weight: '400',
+    variable: '--font-inter',
+    display: 'swap',
+    weight: ['200', '400', '600'],
 })
 
 export const metadata: Metadata = {
@@ -27,11 +25,15 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${questrial.variable} `}
+                className={`${inter_font.variable} w-full min-h-screen scroll-smooth  antialiased`}
                 cz-shortcut-listen="true"
             >
-                <Navbar />
-                {children}
+                <header className="sticky w-full top-0 z-50 ">
+                    <Navbar />
+                </header>
+                <main className="w-full h-full scroll-smooth ">
+                    {children} <ButtonWhatsap />
+                </main>
             </body>
         </html>
     )
