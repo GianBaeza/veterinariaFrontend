@@ -44,6 +44,5 @@
     -moz-box-shadow: -1px 4px 30px -2px rgba(0, 0, 0, 0.75);
 }
 .sombra-logoHome {
-    width: 560px;
     filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.5));
 }
