@@ -1,9 +1,9 @@
 'use client'
 import CardContainer from './components/Card'
 
-import { utilidades } from './constantes/Descripcion'
+import { utilidades } from './constantes/MasInformacion'
 
-export default function Descripcion() {
+export default function MasInformacion() {
     return (
         <div className={'w-full min-h-screen flex items-center justify-center'}>
             <main className="w-10/12 h-full flex flex-col items-center gap-10 justify-center z-10 pt-28">

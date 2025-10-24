@@ -1,7 +1,7 @@
 'use client'
 import useGlobalContext from '@/context/globalContext'
 import React from 'react'
-import useViewport from '../descripcion/hooks/useViewport'
+import useViewport from '../masInformacion/hooks/useViewport'
 
 export default function ContainerRelative({
     children,

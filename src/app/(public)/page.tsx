@@ -1,7 +1,7 @@
 import ContainerRelative from '@/feature/(public)/components/ContainerRelative'
 import Contacto from '@/feature/(public)/contacto/Contacto'
-import Descripcion from '@/feature/(public)/descripcion/Descripcion'
 import Inicio from '@/feature/(public)/Inicio/Inicio'
+import MasInformacion from '@/feature/(public)/masInformacion/MasInformacion'
 
 export default function page() {
     return (
@@ -9,7 +9,7 @@ export default function page() {
             <Inicio />
 
             <ContainerRelative>
-                <Descripcion />
+                <MasInformacion />
                 <Contacto />
             </ContainerRelative>
         </main>
