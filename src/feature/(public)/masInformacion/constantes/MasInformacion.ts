@@ -1,6 +1,6 @@
-import { Descripcion } from '../interface/Descripcion'
+import { MasInformacion } from '../interface/MasInformacion'
 
-export const utilidades: Descripcion[] = [
+export const utilidades: MasInformacion[] = [
     {
         title: 'Gestión de empleados y jornadas',
         subTitulo: 'Control de recursos humanos',

@@ -4,8 +4,15 @@ import { includesString } from '@/shared/utils/general'
 import { NavigationMenuItem, NavigationMenuLink } from '@/lib/navigation-menu'
 import Link from 'next/link'
 import React from 'react'
+import useGlobalContext from '@/context/globalContext'
 
-export default function NavBarSinSession() {
+export default function NavPublic() {
+    const { colorNavbar } = useGlobalContext()
+    const colorText = colorNavbar
+        ? 'text-gray-100 hover:text-gray-300'
+        : 'text-gray-800 hover:text-gray-700 '
+
+    console.log(colorText)
     return (
         <>
             {menuSinSesion.map((nav, i) => (
@@ -17,10 +24,9 @@ export default function NavBarSinSession() {
                                 includesString(nav.label, 'iniciar') ||
                                 includesString(nav.label, 'crear')
                                     ? 'shadow bg-gray-300 hover:bg-gray-600 text-gray-800 hover:text-white px-2 py-1 rounded-lg'
-                                    : 'text-white md:text-gray-800 hover:text-gray-700 '
+                                    : colorText
                             }`}
                         >
-                            {' '}
                             {nav.label}
                         </Link>
                     </NavigationMenuLink>

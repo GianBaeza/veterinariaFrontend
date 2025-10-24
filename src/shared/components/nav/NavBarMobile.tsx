@@ -11,10 +11,15 @@ import {
 import { menuItems } from '@/shared/constants/Navbar'
 import Link from 'next/link'
 import { CircleHelpIcon } from 'lucide-react'
-import NavBarSinSession from './NavBarSinSession'
+import NavBarSinSession from './NavPublic'
 
-function NavBarMobile({ isOpen }: { isOpen: boolean }) {
-    const isSession = false
+function NavBarMobile({
+    isOpen,
+    isSession,
+}: {
+    isOpen: boolean
+    isSession?: boolean
+}) {
     return (
         <div
             className={`fixed top-0 left-0 h-screen ${
@@ -22,15 +27,6 @@ function NavBarMobile({ isOpen }: { isOpen: boolean }) {
             } w-4/6 bg-black/90 text-white flex-col pt-20 z-40 transition-all`}
         >
             {' '}
-            {/* {isMobile && (
-                        <span className="absolute right-0 top-0 cursor-pointer">
-                            <Hamburger
-                                toggled={isOpen}
-                                toggle={setOpen}
-                                color=" white"
-                            />
-                        </span>
-                    )} */}
             <NavigationMenu
                 className="w-full h-screen text-white flex items-start justify-start md:flex-row"
                 viewport={false}

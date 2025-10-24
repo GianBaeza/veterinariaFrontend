@@ -9,9 +9,9 @@ import NavBarDesktop from './NavBarDesktop'
 export function Navbar() {
     const isMobile = useIsMobile()
     const [isOpen, setOpen] = React.useState(false)
-
+    const isSession = false
     return (
-        <nav className="w-4/6 md:w-full relative  h-[80px] flex items-center px-4">
+        <nav className="w-4/6 md:w-full relative  h-[80px] flex items-center px-4 ">
             {isMobile && (
                 <span
                     className={`absolute ${
@@ -24,10 +24,10 @@ export function Navbar() {
                 </span>
             )}
             {/* Menú Desktop */}
-            {!isMobile && <NavBarDesktop />}
+            {!isMobile && <NavBarDesktop isSession={isSession} />}
 
             {/* Menú Mobile */}
-            {isMobile && <NavBarMobile isOpen={isOpen} />}
+            {isMobile && <NavBarMobile isOpen={isOpen} isSession={isSession} />}
         </nav>
     )
 }
