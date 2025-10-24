@@ -1,13 +1,11 @@
-import React from 'react'
-import { utilidades } from '../constantes/Descripcion'
-import { Button } from '@/lib/button'
-import CardContainer from '../components/Card'
+'use client'
+import CardContainer from './components/Card'
+
+import { utilidades } from './constantes/Descripcion'
 
 export default function Descripcion() {
     return (
-        <div className="w-full h-full relative z-20 flex items-center justify-center rounded-tl-3xl rounded-tr-3xl bg-gradient-to-b from-[#0752a7]   to-[#566ba7] flex-col gap-6 px-4 py-8">
-            <div className="absolute w-full h-full bg-black/20  rounded-tl-3xl rounded-tr-3xl"></div>
-
+        <div className={'w-full min-h-screen flex items-center justify-center'}>
             <main className="w-10/12 h-full flex flex-col items-center gap-10 justify-center z-10 pt-28">
                 <article className="flex flex-col items-center w-full ">
                     <h2 className="text-shadow font-inter font-bold  text-white  text-center text-3xl md:text-4xl lg:text-6xl w-11/12 md:text-center text-shadow-2">

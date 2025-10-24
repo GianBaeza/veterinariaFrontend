@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { memo } from 'react'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -11,9 +11,13 @@ import {
 } from '@/lib/navigation-menu'
 import { menuItems } from '@/shared/constants/Navbar'
 import Link from 'next/link'
-import NavBarSinSession from './NavBarSinSession'
-export default function NavBarDesktop() {
-    const isSession = false
+import NavPublic from './NavPublic'
+import useGlobalContext from '@/context/globalContext'
+function NavBarDesktop({ isSession }: { isSession?: boolean }) {
+    const { colorNavbar } = useGlobalContext()
+    const colorText = colorNavbar
+        ? 'text-gray-100 hover:text-gray-300'
+        : 'text-gray-800 hover:text-gray-700 '
     return (
         <NavigationMenu
             className={`w-full text-white  ${
@@ -29,7 +33,7 @@ export default function NavBarDesktop() {
                         <NavigationMenuItem key={i}>
                             <NavigationMenuTrigger
                                 icon={!!nav.submenu}
-                                className="cursor-pointer text-gray-800 hover:text-gray-700 scale-100 transition-all ease-in-out hover:scale-110 "
+                                className={`mix-blend-color:white cursor-pointer  scale-100 transition-all ease-in-out hover:scale-110  ${colorText}`}
                             >
                                 {nav.label}
                             </NavigationMenuTrigger>
@@ -57,9 +61,11 @@ export default function NavBarDesktop() {
                         </NavigationMenuItem>
                     ))
                 ) : (
-                    <NavBarSinSession />
+                    <NavPublic />
                 )}
             </NavigationMenuList>
         </NavigationMenu>
     )
 }
+
+export default memo(NavBarDesktop)
