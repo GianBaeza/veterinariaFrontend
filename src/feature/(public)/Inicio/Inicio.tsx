@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Button } from '@/lib/button'
+import { Button } from '@/lib/components/button'
 
 export default function Inicio() {
     return (

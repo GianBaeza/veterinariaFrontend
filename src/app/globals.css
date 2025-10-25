@@ -3,6 +3,34 @@
 
 @custom-variant dark (&:is(.dark *));
 
+textarea {
+    field-sizing: content;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    padding: 0.5rem; /* p-2 */
+    -webkit-text-fill-color: #000000; /* Color de texto negro */
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset; /* Fondo blanco */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgb(59, 130, 246); /* ring-blue-500 */
+}
 .submenu-navbar {
     background: rgba(238, 237, 237, 0.25);
     backdrop-filter: blur(10px);
@@ -45,4 +73,8 @@
 }
 .sombra-logoHome {
     filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.5));
+}
+
+.text-error {
+    color: #ff4d4f;
 }

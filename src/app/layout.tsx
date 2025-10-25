@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Questrial, Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/shared/components/nav/Navbar'
-import { Button } from '@/lib/button'
+import { Button } from '@/lib/components/button'
 import ButtonWhatsap from '@/shared/ui/ButtonWhatsap'
 
 const inter_font = Inter({

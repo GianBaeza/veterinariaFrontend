@@ -3,7 +3,7 @@ import ContainerRelative from '@/feature/(public)/components/ContainerRelative'
 import Contacto from '@/feature/(public)/contacto/Contacto'
 import Inicio from '@/feature/(public)/Inicio/Inicio'
 import MasInformacion from '@/feature/(public)/masInformacion/MasInformacion'
-import CurvedLoop from '@/lib/CurvedLoop'
+import CurvedLoop from '@/lib/components/CurvedLoop'
 
 export default function page() {
     return (
@@ -12,11 +12,11 @@ export default function page() {
 
             <ContainerRelative>
                 <MasInformacion />
-                <section className="w-full flex flex-col gap-6 justify-center items-center pt-5">
+                <section className="w-full flex flex-col gap-6 justify-center items-center pt-5 z-10">
                     <h2 className="font-inter font-bold text-white text-center lg:text-start text-4xl">
                         Veterinarias que usan nuestra plataforma
                     </h2>
-                    <span className="bg-trasparent   w-10/12 block h-20 relative overflow-hidden ">
+                    <span className="bg-trasparent   w-10/12 block h-20 relative overflow-hidden mt-10 ">
                         <CurvedLoop
                             items={[
                                 { text: 'Veterinaria Profesional', icon: '⏰' },
