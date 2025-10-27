@@ -78,3 +78,9 @@ select:-webkit-autofill:focus {
 .text-error {
     color: #ff4d4f;
 }
+
+.card-contacto {
+    box-shadow: 0px 26px 27px 5px rgba(0, 0, 0, 0.48);
+    -webkit-box-shadow: 0px 26px 67px 5px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 26px 27px 5px rgba(0, 0, 0, 0.053);
+}

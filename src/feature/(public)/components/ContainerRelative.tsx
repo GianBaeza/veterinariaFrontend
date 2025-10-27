@@ -17,7 +17,7 @@ export default function ContainerRelative({
             id="container-descripcion"
             className={`w-full min-h-screen relative z-20 flex items-center justify-center ${
                 colorNavbar ? 'rounded-none ' : 'rounded-tl-3xl rounded-tr-3xl'
-            }  bg-gradient-to-b from-[#000000]   to-[#566ba7] flex-col gap-6 px-4 py-8`}
+            }  bg-gradient-to-b from-[#000000]   to-[#566ba7] flex-col gap-6  py-2`}
             ref={ref}
         >
             <div className="absolute w-full h-full bg-black/20  rounded-tl-3xl rounded-tr-3xl"></div>

@@ -55,7 +55,7 @@ const Error = ({ children }: { children: React.ReactNode }) => {
 const ButtonSubmit = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
     <button
         type="submit"
-        className="bg-blue-500 mt-5 text-white rounded-md p-2 w-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className=" cursor-pointer bg-blue-500 mt-5 text-white rounded-md p-2 w-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
         {...props}
     />
 )

@@ -7,7 +7,7 @@ import CurvedLoop from '@/lib/components/CurvedLoop'
 
 export default function page() {
     return (
-        <main className="flex flex-col items-center justify-center gap-2">
+        <main className="flex flex-col h-full w-full items-center justify-center gap-0">
             <Inicio />
 
             <ContainerRelative>
@@ -31,9 +31,8 @@ export default function page() {
                         />
                     </span>
                 </section>
-
-                <Contacto />
             </ContainerRelative>
+            <Contacto />
         </main>
     )
 }
