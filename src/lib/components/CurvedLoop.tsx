@@ -153,7 +153,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
                             </div>
                         )}
                         <span
-                            className={`text-lg text-center font-medium tracking-wide text-white ${className}`}
+                            className={`text-xl text-center font-medium tracking-wide text-white ${className}`}
                         >
                             {item.text}
                         </span>
