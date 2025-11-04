@@ -5,7 +5,11 @@ import { utilidades } from './constantes/MasInformacion'
 
 export default function MasInformacion() {
     return (
-        <div className={'w-full min-h-screen flex items-center justify-center'}>
+        <div
+            className={
+                'w-full h-full flex flex-col items-center justify-center'
+            }
+        >
             <main className="w-10/12 h-full flex flex-col items-center gap-10 justify-center z-10 pt-28">
                 <article className="flex flex-col items-center w-full ">
                     <h2 className="text-shadow font-inter font-bold  text-white  text-center text-3xl md:text-4xl lg:text-6xl w-11/12 md:text-center text-shadow-2">

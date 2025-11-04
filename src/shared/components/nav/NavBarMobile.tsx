@@ -7,7 +7,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     NavigationMenuViewport,
-} from '@/lib/navigation-menu'
+} from '@/lib/components/navigation-menu'
 import { menuItems } from '@/shared/constants/Navbar'
 import Link from 'next/link'
 import { CircleHelpIcon } from 'lucide-react'

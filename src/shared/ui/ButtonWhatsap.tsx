@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/lib/button'
+import { Button } from '@/lib/components/button'
 import Image from 'next/image'
 import React from 'react'
 

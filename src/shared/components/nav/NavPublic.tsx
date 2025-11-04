@@ -1,7 +1,10 @@
 'use client'
 import { menuSinSesion } from '@/shared/constants/Navbar'
 import { includesString } from '@/shared/utils/general'
-import { NavigationMenuItem, NavigationMenuLink } from '@/lib/navigation-menu'
+import {
+    NavigationMenuItem,
+    NavigationMenuLink,
+} from '@/lib/components/navigation-menu'
 import Link from 'next/link'
 import React from 'react'
 import useGlobalContext from '@/context/globalContext'

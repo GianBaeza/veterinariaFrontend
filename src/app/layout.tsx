@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Questrial, Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/shared/components/nav/Navbar'
-import { Button } from '@/lib/button'
 import ButtonWhatsap from '@/shared/ui/ButtonWhatsap'
 
 const inter_font = Inter({
@@ -31,7 +30,7 @@ export default function RootLayout({
                 <header className="sticky w-full top-0 z-50 ">
                     <Navbar />
                 </header>
-                <main className="w-full h-full scroll-smooth ">
+                <main className="w-full min-h-screen scroll-smooth ">
                     {children} <ButtonWhatsap />
                 </main>
             </body>
