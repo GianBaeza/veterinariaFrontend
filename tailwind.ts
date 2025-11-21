@@ -25,7 +25,8 @@ module.exports = withMT({
 
             // ✍️ TIPOGRAFÍAS
             fontFamily: {
-                inter: ['Inter', 'sans-serif'],
+                inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
+                sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
             },
 
             // 🔠 TAMAÑOS DE TEXTO (Design tokens)

@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/lib/components/button'
+import { StylesGlobales } from '@/shared/constants/style'
 
 export default function Inicio() {
     return (
@@ -19,10 +20,10 @@ export default function Inicio() {
                             para que no pierdas ningún detalle de tu día a día.
                         </p>
                         <span className="flex  items-center lg:items-start gap-2 justify-center lg:justify-start  bg-transparent">
-                            <Button className="bg-violet-400 hover:bg-violet-800 text-white cursor-pointer shadow-2xl w-full sm:w-auto">
+                            <Button className={StylesGlobales.buttonPrimary}>
                                 Comenzar
                             </Button>
-                            <Button className="bg-gray-400 hover:bg-gray-600 text-white cursor-pointer shadow-2xl w-full sm:w-auto">
+                            <Button className={StylesGlobales.buttonSecondary}>
                                 Mas Detalles
                             </Button>
                         </span>

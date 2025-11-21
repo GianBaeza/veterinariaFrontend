@@ -6,9 +6,8 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
 } from '@/lib/components/navigation-menu'
-import { menuItems } from '@/shared/constants/Navbar'
+import { MENU_PRIVADO } from '@/shared/constants/Navbar'
 import Link from 'next/link'
 import { CircleHelpIcon } from 'lucide-react'
 import NavBarSinSession from './NavPublic'
@@ -33,15 +32,12 @@ function NavBarMobile({
             >
                 <NavigationMenuList className=" w-full flex  flex-col items-start justify-start  md:flex-row gap-6 ">
                     {isSession ? (
-                        menuItems.map((nav, i) => (
+                        MENU_PRIVADO.map((nav, i) => (
                             <NavigationMenuItem key={i}>
-                                <NavigationMenuTrigger
-                                    icon={!!nav.submenu}
-                                    className="cursor-pointer"
-                                >
+                                <NavigationMenuTrigger className="cursor-pointer">
                                     {nav.label}
                                 </NavigationMenuTrigger>
-                                {nav.submenu && (
+                                {'submenu' in nav && nav.submenu && (
                                     <NavigationMenuContent className="bg-black/80 p-4 rounded-lg z-10">
                                         <ul className="grid gap-3 w-[200px]">
                                             {nav.submenu.map((subItem, j) => (

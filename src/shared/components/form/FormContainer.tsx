@@ -1,6 +1,78 @@
+'use client'
+import { StylesGlobales } from '@/shared/constants/style'
 import React from 'react'
 
-export default function Form({
+const Label = ({
+    children,
+    ...props
+}: {
+    children: React.ReactNode
+} & React.LabelHTMLAttributes<HTMLLabelElement>) => {
+    return (
+        <label className="flex flex-col items-start " {...props}>
+            {children}
+        </label>
+    )
+}
+
+const Field = ({ children }: { children: React.ReactNode }) => {
+    return <div className="flex flex-col space-y-2">{children}</div>
+}
+
+const Input = (
+    props: { error?: boolean } & React.InputHTMLAttributes<HTMLInputElement>,
+) => {
+    const { error, ...inputProps } = props
+    return (
+        <input
+            className={` border border-gray-600 rounded-md p-2 w-full placeholder:text-gray-400 ${
+                error
+                    ? 'focus:outline-none focus:ring-2 focus:ring-red-500'
+                    : 'focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }`}
+            {...inputProps}
+        />
+    )
+}
+
+const Textarea = (
+    props: {
+        error?: boolean
+    } & React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+) => {
+    const { error, ...textareaProps } = props
+    return (
+        <textarea
+            className={` border border-gray-300 rounded-md p-2 w-full ${
+                error
+                    ? 'focus:outline-none focus:ring-2 focus:ring-red-500'
+                    : 'focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }`}
+            {...textareaProps}
+        />
+    )
+}
+const Error = ({
+    children,
+    ...props
+}: {
+    children: React.ReactNode
+} & React.HTMLAttributes<HTMLParagraphElement>) => {
+    return (
+        <p
+            className={`text-red-500 text-sm mt-1 ${props.className} `}
+            {...props}
+        >
+            {children}
+        </p>
+    )
+}
+
+const ButtonSubmit = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <button type="submit" className={props.className} {...props} />
+)
+
+function FormComponent({
     children,
     ...props
 }: {
@@ -9,59 +81,32 @@ export default function Form({
 }) {
     console.log('RENDER FORM CONTAINER')
     return (
-        <form className="bg-amber-300  w-[400px] max-w-[400px]" {...props}>
+        <form className={` ${props.className} `} {...props}>
             {children}
         </form>
     )
 }
 
-const Field = ({ children }: { children: React.ReactNode }) => {
-    return <label className="flex flex-col items-start ">{children}</label>
+interface FormCompoundComponent
+    extends React.FC<{
+        children: React.ReactNode
+        [x: string]: any
+    }> {
+    Label: typeof Label
+    Field: typeof Field
+    Input: typeof Input
+    Textarea: typeof Textarea
+    ButtonSubmit: typeof ButtonSubmit
+    Error: typeof Error
 }
 
-const Input = (
-    props: { error?: boolean } & React.InputHTMLAttributes<HTMLInputElement>,
-) => {
-    return (
-        <input
-            className={` border border-gray-300 rounded-md p-2 w-full ${
-                props.error
-                    ? 'focus:outline-none focus:ring-2 focus:ring-red-500'
-                    : 'focus:outline-none focus:ring-2 focus:ring-blue-500'
-            }`}
-            {...props}
-        />
-    )
-}
-
-const Textarea = (
-    props: { error?: boolean } & React.InputHTMLAttributes<HTMLTextAreaElement>,
-) => {
-    return (
-        <textarea
-            className={` border border-gray-300 rounded-md p-2 w-full ${
-                props.error
-                    ? 'focus:outline-none focus:ring-2 focus:ring-red-500'
-                    : 'focus:outline-none focus:ring-2 focus:ring-blue-500'
-            }`}
-            {...props}
-        />
-    )
-}
-const Error = ({ children }: { children: React.ReactNode }) => {
-    return <p className="text-red-500 text-sm mt-1">{children}</p>
-}
-
-const ButtonSubmit = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-    <button
-        type="submit"
-        className=" cursor-pointer bg-blue-500 mt-5 text-white rounded-md p-2 w-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        {...props}
-    />
-)
-
+// Crear el componente compuesto
+const Form = FormComponent as FormCompoundComponent
+Form.Label = Label
 Form.Field = Field
 Form.Input = Input
 Form.Textarea = Textarea
 Form.ButtonSubmit = ButtonSubmit
 Form.Error = Error
+
+export default Form

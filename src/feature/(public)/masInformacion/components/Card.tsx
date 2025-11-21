@@ -1,12 +1,5 @@
 'use client'
-import {
-    CardBody,
-    Card,
-    Typography,
-    Avatar,
-    Button,
-    CardProps,
-} from '@material-tailwind/react'
+import { CardBody, Card, Typography } from '@material-tailwind/react'
 import React from 'react'
 
 // Define las props de tu componente
@@ -28,11 +21,28 @@ export default function CardContainer({
             className={`overflow-hidden rounded-xl shadow-sm glass-card font-inter ${
                 className ?? ''
             }`}
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+            onResize={undefined}
+            onResizeCapture={undefined}
         >
-            <CardBody className="p-4">
+            <CardBody
+                className="p-4"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+            >
                 <Typography
                     color="blue-gray"
                     className="mb-1  !font-semibold text-xl text-white"
+                    placeholder={undefined}
+                    onPointerEnterCapture={undefined}
+                    onPointerLeaveCapture={undefined}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
                 >
                     {titulo}
                 </Typography>
@@ -42,6 +52,11 @@ export default function CardContainer({
                             color="gray"
                             variant="h6"
                             className="text-gray-100 text-md  font-medium"
+                            placeholder={undefined}
+                            onPointerEnterCapture={undefined}
+                            onPointerLeaveCapture={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
                         >
                             {subTitulo}
                         </Typography>
@@ -49,6 +64,11 @@ export default function CardContainer({
                             variant="small"
                             color="gray"
                             className="text-gray-100 text-md  font-normal"
+                            placeholder={undefined}
+                            onPointerEnterCapture={undefined}
+                            onPointerLeaveCapture={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
                         >
                             {descripcion}
                         </Typography>

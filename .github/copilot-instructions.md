@@ -35,7 +35,7 @@ Example: `src/feature/(public)/auth/` has auth forms, validation, and API integr
 ### Shared Resources (`src/shared/`)
 
 -   `components/`: Reusable UI (forms, navigation)
--   `constants/`: Route definitions (`ROUTERS_PATH` in `Navbar.ts`)
+-   `constants/`: Route definitions (`RUTAS` in `Navbar.ts`)
 -   `hooks/`: `useIsMobile()` for responsive logic
 -   `ui/`: Specialized components like `ButtonWhatsap`
 
@@ -89,7 +89,7 @@ pnpm dev  # Runs on localhost:3000
 ### Naming Patterns
 
 -   Components: PascalCase files (`Navbar.tsx`, `Formulario.tsx`)
--   Constants: UPPER_SNAKE_CASE exports (`ROUTERS_PATH`, `URL_API_AUTH`)
+-   Constants: UPPER_SNAKE_CASE exports (`RUTAS`, `URL_API_AUTH`)
 -   Server actions: camelCase async functions (`iniciarSessionConValidacion`)
 -   Spanish language used in code (variable names, comments, UI text)
 
