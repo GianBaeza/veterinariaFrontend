@@ -1,15 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import ButtonWhatsap from '@/shared/ui/ButtonWhatsap'
 import NavbarContainer from '@/shared/components/nav/NavbarContainer'
-
-const inter_font = Inter({
-    subsets: ['latin'],
-    variable: '--font-inter',
-    display: 'swap',
-    weight: ['200', '400', '600'],
-})
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -24,7 +16,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter_font.variable} font-sans w-full min-h-screen scroll-smooth antialiased`}
+                className="font-sans w-full min-h-screen scroll-smooth antialiased"
                 cz-shortcut-listen="true"
             >
                 <header className="sticky w-full top-0 z-50 ">

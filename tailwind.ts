@@ -25,8 +25,22 @@ module.exports = withMT({
 
             // ✍️ TIPOGRAFÍAS
             fontFamily: {
-                inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
-                sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+                inter: [
+                    'var(--font-inter)',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    'Segoe UI',
+                    'Roboto',
+                    'sans-serif',
+                ],
+                sans: [
+                    'var(--font-inter)',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    'Segoe UI',
+                    'Roboto',
+                    'sans-serif',
+                ],
             },
 
             // 🔠 TAMAÑOS DE TEXTO (Design tokens)

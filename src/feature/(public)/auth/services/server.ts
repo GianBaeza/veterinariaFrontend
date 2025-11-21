@@ -80,6 +80,12 @@ export async function iniciarSessionConValidacion(
     if (usuario) {
         redirect(RUTAS_PRIVADAS.DASHBOARD, RedirectType.push)
     }
+    
+    // This should never be reached as redirect throws, but TypeScript needs a return
+    return {
+        success: true,
+        errors: null,
+    }
 }
 
 export const cerrarSesion = async () => {
