@@ -1,7 +1,13 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/* Configuración global de la fuente Inter */
+:root {
+    --font-inter: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-inter);
+}
 
 textarea {
     field-sizing: content;

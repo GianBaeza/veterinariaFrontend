@@ -1,5 +1,8 @@
+'use client'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import Swal from 'sweetalert2'
+import 'sweetalert2/dist/sweetalert2.css'
 
 export function customAlert(
     message: string,
@@ -51,4 +54,25 @@ export function customAlert(
         alert.style.opacity = '0'
         setTimeout(() => alert.remove(), 400)
     }, duration)
+}
+
+export const AlertaConfirmar = ({ fn }: { fn: () => void }) => {
+    Swal.fire({
+        title: 'Cerrar sesión?',
+        text: '¿Estás seguro ?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#A684FF',
+        cancelButtonColor: '#99A1AF',
+        confirmButtonText: 'Cerrar sesión',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Swal.fire({
+            //     title: '¡Cerrado!',
+            //     text: 'Has cerrado sesión correctamente.',
+            //     icon: 'success',
+            // })
+            fn()
+        }
+    })
 }

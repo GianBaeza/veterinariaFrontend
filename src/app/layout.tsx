@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Questrial, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
-import { Navbar } from '@/shared/components/nav/Navbar'
 import ButtonWhatsap from '@/shared/ui/ButtonWhatsap'
+import NavbarContainer from '@/shared/components/nav/NavbarContainer'
 
 const inter_font = Inter({
     subsets: ['latin'],
@@ -24,15 +24,16 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter_font.variable} w-full min-h-screen scroll-smooth  antialiased`}
+                className={`${inter_font.variable} font-sans w-full min-h-screen scroll-smooth antialiased`}
                 cz-shortcut-listen="true"
             >
                 <header className="sticky w-full top-0 z-50 ">
-                    <Navbar />
+                    <NavbarContainer />
                 </header>
                 <main className="w-full min-h-screen scroll-smooth ">
                     {children} <ButtonWhatsap />
                 </main>
+                <div id="modals-root"></div>
             </body>
         </html>
     )

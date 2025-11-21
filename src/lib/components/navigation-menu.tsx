@@ -1,4 +1,7 @@
+'use client'
+
 import * as React from 'react'
+import { useEffect } from 'react'
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import { cva } from 'class-variance-authority'
 import { ChevronDownIcon } from 'lucide-react'
@@ -13,6 +16,9 @@ function NavigationMenu({
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
     viewport?: boolean
 }) {
+    useEffect(() => {
+        console.debug('[NavigationMenu] mounted')
+    }, [])
     return (
         <NavigationMenuPrimitive.Root
             data-slot="navigation-menu"
@@ -31,6 +37,7 @@ function NavigationMenu({
 
 function NavigationMenuList({
     className,
+    children,
     ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {
     return (
@@ -41,7 +48,9 @@ function NavigationMenuList({
                 className,
             )}
             {...props}
-        />
+        >
+            {children}
+        </NavigationMenuPrimitive.List>
     )
 }
 
@@ -131,6 +140,9 @@ function NavigationMenuLink({
     className,
     ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Link>) {
+    useEffect(() => {
+        console.debug('[NavigationMenuLink] mounted')
+    }, [])
     return (
         <NavigationMenuPrimitive.Link
             data-slot="navigation-menu-link"
