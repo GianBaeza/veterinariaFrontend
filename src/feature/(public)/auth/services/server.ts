@@ -80,6 +80,13 @@ export async function iniciarSessionConValidacion(
     if (usuario) {
         redirect(RUTAS_PRIVADAS.DASHBOARD, RedirectType.push)
     }
+
+    return {
+        success: false,
+        errors: {
+            formErrors: ['No se pudo verificar la sesión'],
+        },
+    }
 }
 
 export const cerrarSesion = async () => {

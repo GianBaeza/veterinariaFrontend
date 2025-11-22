@@ -1,0 +1,65 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "editor.cursorBlinking": "phase",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "prettier.tabWidth": 4,
+    "editor.fontFamily": "Google Sans Code",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.fontWeight": "400",
+    "prettier.useTabs": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "prettier.trailingComma": "all",
+    "DockerRun.DisableDockerrc": true,
+    "workbench.list.rowHeight": 28,
+    "workbench.tree.indent": 16,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "vscode_custom_css.imports": [
+        "file:///c:/Users/PC/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "docker.extension.enableComposeLanguageServer": false,
+    "redhat.telemetry.enabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "explorer.confirmDelete": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "docker.extension.dockerEngineAvailabilityPrompt": false,
+    "chat.mcp.autostart": "newAndOutdated",
+    "editor.guides.bracketPairs": "active",
+    "vs-code-prettier-eslint.prettierLast": false,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "git.autofetch": true,
+    "DockerRun.DisableAutoGenerateConfig": true,
+    "workbench.iconTheme": "vscode-icons",
+    "chat.agentSessionsViewLocation": "view",
+    "workbench.colorTheme": "Atom One Dark",
+    "cSpell.enabled": false
+}
